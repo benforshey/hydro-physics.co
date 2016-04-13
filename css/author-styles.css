@@ -1,0 +1,525 @@
+/***************************************************
+****************************************************
+TABLE OF CONTENTS
+    1) Normalize (normalize.css v3.0.1 | MIT License | git.io/normalize)
+    2) Good Defaults, Site Styles (Typography, Color, Layout)
+    3) Header
+    4) Layout, Main Content, Aside
+    5) Footer
+    6) Interactions, Transitions, and Transforms
+    7) Media Queries
+
+
+TYPOGRAPHY
+    Header            Roboto, sans-serif
+    Body                Open Sans, sans-serif
+
+COLOR GUIDE
+    #1378B9            hsl(203, 81%, 40%)            Logo Light Blue
+    #64C2B8            hsl(174, 44%, 58%)            Logo Turquoise
+    #292929            hsl(0, 0%, 16%)                    Dark Gray
+    #F3F3F3            hsl(0, 0%, 95%)                    Dirty White
+    #08435D            hsl(198, 84%, 20%)            Dark Blue
+    #FF8E31            hsl(27, 100%, 60%)            Orange
+
+***************************************************
+***************************************************/
+
+/*--------------------------------------------------
+----------------------------------------------------
+1) Normalize (normalize.css v3.0.1 | MIT License | git.io/normalize)
+I partially minified this; expanded version with comments available at source.
+Avoiding @import and combining a file reduces overall HTTP requests.
+----------------------------------------------------
+--------------------------------------------------*/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{display:block}
+audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+a{background:transparent}
+a:active,a:hover{outline:0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:700}
+dfn{font-style:italic}
+h1{font-size:2em;margin:.67em 0}
+mark{background:#ff0;color:#000}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:1em 40px}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+pre{overflow:auto}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
+button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}
+button{overflow:visible}
+button,select{text-transform:none}
+button,html input[type="button"],/* 1 */
+input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+input{line-height:normal}
+input[type="checkbox"],input[type="radio"]{-moz-box-sizing:border-box;box-sizing:border-box;padding:0}
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+textarea{overflow:auto}
+optgroup{font-weight:700}
+table{border-collapse:collapse;border-spacing:0}
+td,th{padding:0}
+
+
+/*--------------------------------------------------
+----------------------------------------------------
+2) Good Defaults, Site Styles (Typography, Color, Layout)
+A collection of my coding preferences and site-wide styles.
+----------------------------------------------------
+--------------------------------------------------*/
+/* clearfix, by Nicolas Gallagher */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+*, *:before, *:after {
+    /*CSS Tricks goodness for using border-box, yet allowing elements to inherit parent box-sizing */
+    -moz-box-sizing: inherit;
+         box-sizing: inherit;
+}
+
+/* minimum responsive media */
+img, video {
+    max-width: 100%;
+}
+
+html {
+    /* the easy way, if you don't need to support IE8 */
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+
+    /* wrap words to prevent breaking layout */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    /* background color fall-back */
+    background-color: #F3F3F3;
+    background: url(../img/background/crossword.png) repeat center center;
+
+    /* font declaration */
+    font: 400 1.25em/1.5 "Open Sans", "Helvetica", sans-serif; /*20px (at browser default of 16px)*/
+
+}
+
+body {
+    color: #292929;
+    max-width: 1048px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h1, h2, h3, th {
+    font-family: "Roboto", "Arial Narrow", sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.25em; /*45px*/
+}
+
+h2 {
+    font-size: 1.5em; /*30px*/
+}
+
+h3 {
+    font-size: 1.125em; /*22.5px*/
+}
+
+
+/*--------------------------------------------------
+----------------------------------------------------
+3) Header
+----------------------------------------------------
+--------------------------------------------------*/
+header {
+    margin-top: 2em; /*keeps space for phone-container*/
+    position: relative; /*container for absolutely positioned elements*/
+    width: 100%;
+}
+.phone-container {
+    background: hsla(27, 100%, 60%, 0.9);
+    left: 0;
+    min-height: 2em;
+    position: fixed; /*fixed position for sticky scroll*/
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.phone-container p {
+    color: #F3F3F3;
+    left: 1em;
+    margin: 0.25em 0; /*5px at full width; scales at each breakpoint*/
+    position: absolute;
+    top: 0;
+}
+.header-container {
+    background: #3D3D3D;
+    float: left;
+    font-size: 0.66666666666667em; /*30px at full width (down from h1)*/
+    padding: 0 1em 0 0.25em;
+    width: 100%;
+}
+.header-container img {
+    float: left;
+    height: 6.5em;
+}
+.header-container h1 {
+    float: right;
+    color: #F3F3F3;
+}
+header nav {
+    background: hsla(198, 84%, 20%, 0.9);
+    clear: both;
+    float: left;
+    font-size: 1.125em; /*22.5px*/
+    margin-bottom: 2em;
+    text-align: center;
+    width: 100%;
+}
+header nav a {
+    display: inline-block; /*for better breaking and vertical margins*/
+    margin: 0.5em 2em 0.5em 0; /*50px and 10px (in case of collapse) at full width*/
+}
+header nav a:last-of-type{
+    margin-right: 0;
+}
+
+/*--------------------------------------------------
+----------------------------------------------------
+4) Layout, Main Content, Aside
+----------------------------------------------------
+--------------------------------------------------*/
+main {
+    float: left;
+    padding: 0 0.5em;
+    width: 100%;
+}
+/* full-width */
+div.cta, div.aside-images, .team div, div.video-wrapper, div.pricing, div.sewer-library, div.category {
+    clear: both;
+    float: left;
+    padding: 1em 0;
+    width: 100%;
+}
+div.aside-images {
+     padding: 0 0.5em;
+}
+/* 66/33 split */
+.cta>div:first-of-type, div.values {
+    float: left;
+    padding: 0 0.5em;
+    width: 66%;
+}
+.cta>div:last-of-type, div.team {
+    float: right;
+    padding: 0 0.5em;
+    width: 33%;
+}
+/* 50/50 split */
+div.form-support, div.additonal-contact, .category-images:nth-child(even), div.review {
+    float: left;
+    padding: 0 0.5em;
+    width: 50%;
+}
+div.form-container, .category-images:nth-child(odd), div.support-info {
+    float: right;
+    padding: 0 0.5em;
+    width: 50%;
+}
+/* Images */
+.cta-aside img, .sewer-library img {
+    outline: 2px solid hsla(0, 0%, 16%, 0.8);
+    box-shadow: 2px 2px 2px 2px hsla(198, 84%, 20%, 0.3);
+    float: left;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+img[src*="team"] {
+    border: 4px solid #FFF;
+    border-radius: 100%;
+    box-shadow: 2px 2px 2px 2px hsla(198, 84%, 20%, 0.1);
+    display: block;
+    float: left;
+    margin: 0 auto;
+}
+figcaption {
+    font-size: 1.125em;
+    text-align: center;
+}
+/* Table */
+table {
+    border: 2px solid hsla(198, 84%, 20%, 0.9);
+}
+col:nth-child(even) {
+    border-left: 2px solid hsla(198, 84%, 20%, 0.9);
+    border-right: 2px solid hsla(198, 84%, 20%, 0.9);
+}
+tbody tr:nth-child(odd){
+    background: hsla(174, 44%, 58%, 0.9);
+}
+tr:nth-child(even){
+    background: hsla(203, 81%, 40%, 0.9);
+}
+th, td {
+    text-align: left;
+    width: 33.333333333333%;
+    padding: 0.954198473282%; /*10px (0.5em) / 1048px*/
+}
+thead, tfoot {
+    background: #FFF;
+}
+thead {
+    font-size: 1.125em; /*22.5px*/
+}
+tfoot {
+    font-size: 0.9375em; /*15px*/
+}
+tbody {
+    color: white;
+}
+td img {
+    width: 100%;
+}
+td.price {
+    text-align: center;
+    font-size: 1.125em; /*22.5px*/
+}
+/* Video */
+video {
+    display: block;
+    margin: 0 auto;
+}
+/* Form */
+fieldset {
+    border: 1px solid hsla(0, 0%, 16%, 0.5);
+}
+.altMessage {
+    display: none;
+}
+input, label, textarea {
+    display: block;
+    width: 100%;
+    padding: 0.125em;
+}
+input, textarea {
+    border: 1px solid #08435D;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+textarea {
+    height: 14em;
+}
+
+/*--------------------------------------------------
+----------------------------------------------------
+ 5) Footer
+----------------------------------------------------
+--------------------------------------------------*/
+footer {
+    background: #3D3D3D;
+    color: white;
+    float: left;
+    font-size: 0.75em;
+    margin-top: 2em;
+    padding: .5em 1.908396946565%; /*20px*/
+    width: 100%;
+}
+footer a {
+    color: white;
+}
+footer img {
+    height: 6.5em;
+    float: left;
+}
+footer div:first-of-type {
+    float: left;
+}
+footer div:last-of-type {
+    float: right;
+}
+
+/*--------------------------------------------------
+----------------------------------------------------
+ 6) Interactions, Transitions, and Transforms
+----------------------------------------------------
+--------------------------------------------------*/
+a[href^='tel'], a[href^='mailto'], .cta span, .price, .form-support span, .additional-contact span, legend, .values span {;
+    font-weight: 700;
+}
+button, .button {
+    background: #FF9845;
+    border: 4px solid #FF9845;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px hsla(198, 84%, 20%, 0.1);
+    color: #FFF;
+    display: inline-block;
+    font-weight: 700;
+    margin: .5em 0;
+    padding: .5em 1em;
+    text-decoration: none;
+    -webkit-transition: 1s ease border;
+            transition: 1s ease border;
+}
+button:hover, .button:hover {
+    border: 4px solid #08435D;
+}
+.feedback_error {
+    background: #ff3710;
+    color: #F3F3F3;
+    margin: 1em auto;
+    padding: 0.5em;
+}
+.feedback_warning {
+    background: #FF8E31;
+    color: #F3F3F3;
+    margin: 1em auto;
+    padding: 0.5em;
+}
+.feedback_success {
+    background: #60c354;
+    color: #F3F3F3;
+    margin: 1em auto;
+    padding: 0.5em;
+}
+div.informational {
+    background: #3D3D3D;
+    margin: -2em auto 2em auto;
+    text-align: center;
+    width: 80%;
+}
+.informational p{
+    color: #F3F3F3;
+    padding: 0.25em;
+}
+/*links LVFHA*/
+a:link {
+    color: #1378B9;
+    text-decoration: none;
+}
+a:visited {
+    color: #1378B9;
+}
+a:focus, a:hover, a:active {
+    border-bottom: 2px solid #1378B9;
+    color: #1378B9;
+}
+header a:link, header>nav>a:visited, #ctaButton {
+    color: #F3F3F3;
+}
+header>nav>a.active {
+    color: #FF8E31;
+    border-bottom: 4px solid #FF8E31;
+}
+/*--------------------------------------------------
+----------------------------------------------------
+ 7) Media Queries
+----------------------------------------------------
+--------------------------------------------------*/
+/* less than 450 */
+@media screen and (max-width: 28.0625em) {
+    html {
+        font-size: 0.9375em; /*15px*/
+    }
+    header span {
+        display: none;
+    }
+    header nav a {
+        display: block;
+        width: 100%;
+        margin: 0.5em 2em 0.5em 0; /*50px and 10px (in case of collapse) at full width*/
+    }
+    header nav a.active {
+        color: #FF8E31;
+        border: 2px solid #FF8E31;
+    }
+    /* full width, left float */
+    .cta>div:first-of-type, .cta>div:last-of-type, div.review, div.support-info, div.values, div.team, .team div, div.form-container, div.form-support, div.additional-contact, .category-images:nth-child(odd), .category-images:nth-child(even) {
+        float: left;
+        padding: 0 0.5em;
+        width: 100%;
+    }
+    /* half width, float left*/
+    .support-pics img {
+        clear: none;
+        float: left;
+        width: 100%;
+    }
+    /* 50/50 split */
+    .aside-images:first-of-type {
+        clear: none;
+        float: left;
+        width: 50%;
+    }
+    .aside-images:last-of-type {
+        clear: none;
+        float: right;
+        width: 50%;
+    }
+}
+
+/* 450 to 649 */
+@media screen and (min-width: 28.125em) and (max-width: 40.5625em){
+    html {
+        font-size: 0.9375em;  /*15px*/
+    }
+    .header-container span:last-of-type {
+        display: none;
+    }
+    /* full width, left float */
+    .cta>div:first-of-type, .cta>div:last-of-type, .support-info>div:first-of-type, .support-info>div:nth-child(even), .support-info>div:last-of-type, div.values, div.team, div.form-container, div.form-support, div.additional-contact {
+        float: left;
+        padding: 0 0.5em;
+        width: 100%;
+    }
+    /* half width, float left*/
+    .support-pics img, .team div {
+        clear: none;
+        float: left;
+        width: 50%;
+    }
+    /* 50/50 split */
+    .aside-images:first-of-type {
+        clear: none;
+        float: left;
+        width: 50%;
+    }
+    .aside-images:last-of-type {
+        clear: none;
+        float: right;
+        width: 50%;
+    }
+}
+
+/* 650 to 799 */
+@media screen and (min-width: 40.625em) and (max-width: 49.9375em){
+    html {
+        font-size: 1em; /*16px*/
+    }
+}
+
+/* 800 to 1000 */
+@media screen and (min-width: 50em) and (max-width: 62.5em){
+    html {
+        font-size: 1.125em; /*18px*/
+    }
+}
