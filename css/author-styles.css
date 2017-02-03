@@ -11,14 +11,14 @@ TABLE OF CONTENTS
 
 
 TYPOGRAPHY
-    Header            Roboto, sans-serif
+    Header              Roboto, sans-serif
     Body                Open Sans, sans-serif
 
 COLOR GUIDE
     #1378B9            hsl(203, 81%, 40%)            Logo Light Blue
     #64C2B8            hsl(174, 44%, 58%)            Logo Turquoise
-    #292929            hsl(0, 0%, 16%)                    Dark Gray
-    #F3F3F3            hsl(0, 0%, 95%)                    Dirty White
+    #292929            hsl(0, 0%, 16%)               Dark Gray
+    #F3F3F3            hsl(0, 0%, 95%)               Dirty White
     #08435D            hsl(198, 84%, 20%)            Dark Blue
     #FF8E31            hsl(27, 100%, 60%)            Orange
 
@@ -363,7 +363,7 @@ footer div:last-of-type {
  6) Interactions, Transitions, and Transforms
 ----------------------------------------------------
 --------------------------------------------------*/
-a[href^='tel'], a[href^='mailto'], .cta span, .price, .form-support span, .additional-contact span, legend, .values span {;
+a[href^='tel'], a[href^='mailto'], .cta span, .price, .form-support span, .additional-contact span, legend, .values span {
     font-weight: 700;
 }
 button, .button {
@@ -429,6 +429,17 @@ header a:link, header>nav>a:visited, #ctaButton {
 header>nav>a.active {
     color: #FF8E31;
     border-bottom: 4px solid #FF8E31;
+}
+a.footnote {
+    text-decoration: underline;
+}
+a.footnote-darkBG {
+    color: #F3F3F3;
+}
+a.footnote:focus,
+a.footnote:hover,
+a.footnote:active {
+    border-bottom: none;
 }
 /*--------------------------------------------------
 ----------------------------------------------------
