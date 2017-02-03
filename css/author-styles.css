@@ -431,6 +431,7 @@ header>nav>a.active {
     border-bottom: 4px solid #FF8E31;
 }
 a.footnote {
+    border-bottom: 0;
     text-decoration: underline;
 }
 a.footnote-darkBG {
@@ -439,7 +440,7 @@ a.footnote-darkBG {
 a.footnote:focus,
 a.footnote:hover,
 a.footnote:active {
-    border-bottom: none;
+    border-bottom: 0;
 }
 /*--------------------------------------------------
 ----------------------------------------------------
