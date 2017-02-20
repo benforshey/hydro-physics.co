@@ -1,8 +1,9 @@
+/* eslint-env browser */
+/* global ga */
 var inputs = document.getElementsByTagName('input')
 var feedbackContainer = document.getElementsByClassName('form_feedback')
 var form = document.getElementById('contactForm')
 var security = document.getElementById('altMessage')
-var textarea = document.getElementsByTagName('textarea')
 var URL = 'http://159.203.239.117:3025/sms'
 
 function clearFeedback () {
@@ -19,14 +20,6 @@ function giveFeedback (className, message) {
   feedback.className = className
   feedback.innerHTML = message
   feedbackContainer[0].appendChild(feedback)
-}
-
-function clearForm () {
-  for (var i = 0; i < inputs.length; i++) { // empty the form on success
-    inputs[i].value = ''
-  }
-
-  textarea[0].value = ''
 }
 
 function sendReport () {
@@ -47,7 +40,15 @@ function sendReport () {
           message = 'Your message was sent!'
 
           giveFeedback('feedback_success', message)
-          clearForm()
+
+          ga('send', {  // since GA is loaded in the head, assume its presence
+            hitType: 'event',
+            eventCategory: 'Form',
+            eventAction: 'send',
+            eventLabel: 'Contact Form'
+          })
+
+          form.reset()  // reset the form
         } else { // something nonspecific has gone wrong
           message = 'Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the bottom of the page to reach us.'
 
