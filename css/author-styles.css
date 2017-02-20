@@ -113,7 +113,7 @@ html {
 
     /* background color fall-back */
     background-color: #F3F3F3;
-    background: url(../img/background/crossword.png) repeat center center;
+    background: url(/img/background/crossword.png) repeat center center;
 
     /* font declaration */
     font: 400 1.25em/1.5 "Open Sans", "Helvetica", sans-serif; /*20px (at browser default of 16px)*/
