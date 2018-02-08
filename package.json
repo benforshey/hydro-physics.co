@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "node_modules/.bin/gulp"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "gulp": "3.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "7.2.5",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.1",
     "cssnano": "3.10.0",
     "gulp": "3.9.1",
+    "gulp-babel": "7.0.1",
+    "gulp-concat": "2.6.1",
     "gulp-minify": "2.1.0",
     "gulp-postcss": "7.0.1",
     "gulp-sourcemaps": "1.12.1"

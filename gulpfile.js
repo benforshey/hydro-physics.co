@@ -4,17 +4,22 @@ const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
 
-gulp.task('js', () => {
-  gulp.src('./js/*.js')
+gulp.task('js', () =>
+  gulp.src('./js/main.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(concat('main.js'))
     .pipe(minify({
       ext: {
         src: '.js',
         min: '-min.js',
       },
     }))
-    .pipe(gulp.dest('./js/dist/'));
-});
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./js/dist/')));
 
 gulp.task('css', () => {
   const plugins = [
