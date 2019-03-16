@@ -1,25 +1,26 @@
 {
-  "name": "hydro-physics.co",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "node_modules/.bin/gulp"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "autoprefixer": "7.2.5",
-    "babel-core": "6.26.0",
-    "babel-preset-env": "1.6.1",
-    "cssnano": "3.10.0",
-    "gulp": "3.9.1",
-    "gulp-babel": "7.0.1",
-    "gulp-concat": "2.6.1",
-    "gulp-minify": "2.1.0",
-    "gulp-postcss": "7.0.1",
-    "gulp-sourcemaps": "1.12.1"
-  }
+	"name": "hydro-physics.co",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node_modules/.bin/gulp"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"autoprefixer": "7.2.5",
+		"babel-core": "^6.26.3",
+		"babel-preset-env": "^1.7.0",
+		"cssnano": "3.10.0",
+		"gulp": "3.9.1",
+		"gulp-babel": "7.0.1",
+		"gulp-concat": "2.6.1",
+		"gulp-minify": "2.1.0",
+		"gulp-postcss": "7.0.1",
+		"gulp-sourcemaps": "1.12.1",
+		"natives": "^1.1.6"
+	}
 }
