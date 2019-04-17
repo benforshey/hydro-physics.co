@@ -9,3 +9,9 @@
   to = "https://videos.sewercam.net/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.sewercam.net/?from-hydro-physics=true"
+  status = 301
+  force = true
