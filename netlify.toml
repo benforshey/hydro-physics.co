@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://videos.hydro-physics.co/:videoId"
+  to = "https://videos.sewercam.net/:videoId"
+  status = 301
+  force = false
