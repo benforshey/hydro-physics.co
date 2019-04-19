@@ -1,12 +1,14 @@
 [[redirects]]
-  from = "http://videos.hydro-physics.co/videos*"
-  to = "https://videos.sewercam.net/videos:splat"
+  from = "http://videos.hydro-physics.co/videos"
+  query = {code = ":c", date = ":d"}
+  to = "https://videos.sewercam.net/videos?date=:d&code=:c"
   status = 301
   force = true
   
 [[redirects]]
-  from = "https://videos.hydro-physics.co/videos*"
-  to = "https://videos.sewercam.net/videos:splat"
+  from = "https://videos.hydro-physics.co/videos"
+  query = {code = ":c", date = ":d"}
+  to = "https://videos.sewercam.net/videos?date=:d&code=:c"
   status = 301
   force = true
 
