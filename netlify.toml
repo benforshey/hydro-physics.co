@@ -1,18 +1,4 @@
 [[redirects]]
-  from = "http://videos.hydro-physics.co/videos"
-  query = {code = ":c", date = ":d"}
-  to = "https://videos.sewercam.net/videos?date=:d&code=:c"
-  status = 301
-  force = true
-  
-[[redirects]]
-  from = "https://videos.hydro-physics.co/videos"
-  query = {code = ":c", date = ":d"}
-  to = "https://videos.sewercam.net/videos?date=:d&code=:c"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "http://videos.hydro-physics.co/*"
   to = "https://videos.sewercam.net/:splat"
   status = 301
@@ -21,6 +7,32 @@
 [[redirects]]
   from = "https://videos.hydro-physics.co/*"
   to = "https://videos.sewercam.net/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://videos.hydro-physics.co/videos"
+  query = {code = ":c", date = ":d"}
+  to = "https://videos.sewercam.net/videos?date=:d&code=:c"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://videos.hydro-physics.co/videos"
+  query = {code = ":c", date = ":d"}
+  to = "https://videos.sewercam.net/videos?date=:d&code=:c"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://videos.hydro-physics.co/"
+  to = "https://videos.sewercam.net/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://videos.hydro-physics.co/"
+  to = "https://videos.sewercam.net/"
   status = 301
   force = true
 
