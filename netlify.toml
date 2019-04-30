@@ -13,16 +13,22 @@
   force = true
 
 [[redirects]]
-  from = "http://videos.hydro-physics.co/*"
-  to = "https://videos.sewercam.net/:splat?from-hydro-physics=true"
-  status = 301
+  from = "/*"
+  to = "/"
+  status = 404
   force = true
 
-[[redirects]]
-  from = "https://videos.hydro-physics.co/*"
-  to = "https://videos.sewercam.net/:splat?from-hydro-physics=true"
-  status = 301
-  force = true
+# [[redirects]]
+#   from = "http://videos.hydro-physics.co/*"
+#   to = "https://videos.sewercam.net/:splat?from-hydro-physics=true"
+#   status = 301
+#   force = true
+
+# [[redirects]]
+#   from = "https://videos.hydro-physics.co/*"
+#   to = "https://videos.sewercam.net/:splat?from-hydro-physics=true"
+#   status = 301
+#   force = true
 
 # [[redirects]]
 #   from = "/*"
